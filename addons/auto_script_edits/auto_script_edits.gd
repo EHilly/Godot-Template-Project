@@ -43,6 +43,9 @@ func _on_opened_new_script(script:Script, script_filename:String):
 
 
 static func modify_script_source_code(script:Script, new_source_code:String):
+	var is_script_open:bool = false
+	var current_script:Script = EditorInterface.get_script_editor().get_current_script()
+	
 	EditorInterface.get_script_editor().close_file(script.resource_path)
 	#script_editor.close_file(script.resource_path)
 	script.source_code = new_source_code

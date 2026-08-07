@@ -1,6 +1,14 @@
 class_name FileUtilities
 extends Node
 
+
+static func modify_active_script_source_code(script:Script, new_source_code:String):
+	EditorInterface.get_script_editor().close_file(script.resource_path)
+	script.source_code = new_source_code
+	ResourceSaver.save(script, script.resource_path)
+	EditorInterface.edit_script(script)
+
+
 static func get_all_filenames_in_directory_and_subdirectories(directory_path:String, file_extension:String = "") -> Set:
 	var filenames:Set = Set.new([])
 	

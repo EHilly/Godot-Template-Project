@@ -31,6 +31,9 @@ func _exit_tree() -> void:
 
 
 func _on_editor_script_changed(script:Script) -> void:
+	if (script == null): 
+		return #When godot first opens, sometimes the editor_script_changed signal gets emitted with a null value
+		
 	var script_filepath := script.resource_path
 	var script_filename := script_filepath.get_file()
 	
@@ -42,7 +45,7 @@ func _on_editor_script_changed(script:Script) -> void:
 #New scripts sometimes come with functions defined (e.g. _ready())
 #But they typically don't have any vars declared
 func _is_new_script(script:Script):
-	return !known_gdscript_files.has(script.resource_path) \
+	return !known_gdscript_files.has(script.resource_path.get_file()) \
 		   and !script.source_code.contains("var")
 
 
@@ -50,10 +53,14 @@ func _on_opened_new_script(script:Script, script_filename:String):
 	var new_source_code := script.source_code
 	
 	#If class_name isn't present, add it. Oh, also avoid adding it to autoloads
-	if (script.get_global_name() == "" and !script.resource_path.contains("Autoloads/")):
+	if (script.get_global_name() == ""):
 		var script_filename_without_extension = script_filename.split(".")[0]
 		var pascal_case_class_name = _convert_snake_case_to_pascal_case(script_filename_without_extension)
-		new_source_code = new_source_code.replace("extends ", ("class_name %s\nextends " % pascal_case_class_name))
+		
+		if (script.resource_path.contains("Autoloads/")):
+			new_source_code = new_source_code.replace("extends ", ("# This is an autoload named %s\nextends " % pascal_case_class_name))
+		else:
+			new_source_code = new_source_code.replace("extends ", ("class_name %s\nextends " % pascal_case_class_name))
 
 	new_source_code = new_source_code.replace(READY_FUNCTION_STUB, "")
 	new_source_code = new_source_code.replace(PROCESS_FUNCTION_STUB, "")

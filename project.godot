@@ -28,7 +28,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/auto_script_edits/plugin.cfg", "res://addons/autosize_label/plugin.cfg")
+enabled=PackedStringArray("res://addons/auto_node_reference/plugin.cfg", "res://addons/auto_script_edits/plugin.cfg", "res://addons/autosize_label/plugin.cfg")
 
 [gui]
 

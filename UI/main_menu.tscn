@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://dvobonlj2bvbe"]
 
-[ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/white_square.png" id="1_p8ccj"]
+[ext_resource type="Script" uid="uid://6b5ltwdwu64w" path="res://UI/main_menu.gd" id="1_d8nwk"]
+[ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/Sprites/white_square.png" id="1_p8ccj"]
+[ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="2_tk8dj"]
 
-[node name="MainMenu" type="CanvasLayer" unique_id=1672638096]
+[node name="MainMenu" type="CanvasLayer" unique_id=1672638096 node_paths=PackedStringArray("play_button", "options_button", "credits_button")]
+script = ExtResource("1_d8nwk")
+play_button = NodePath("VBoxContainer/PlayButton")
+options_button = NodePath("VBoxContainer/OptionsButton")
+credits_button = NodePath("VBoxContainer/CreditsButton")
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=101043291]
 anchors_preset = 15
@@ -12,15 +18,63 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_p8ccj")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=7183409]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1674418442]
+custom_minimum_size = Vector2(600, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.5
+offset_top = -269.5
+offset_right = 362.5
+offset_bottom = 269.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
 
-[node name="Title" type="Label" parent="MarginContainer" unique_id=852439238]
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=852439238]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("2_tk8dj")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
 text = "GAME TITLE"
+
+[node name="Spacer" type="Control" parent="VBoxContainer" unique_id=1792258188]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1064944007]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 34
+text = "PLAY"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer" unique_id=1576936050]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 34
+text = "OPTIONS"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=1688179471]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 34
+text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=2089537428]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 34
+text = "QUIT"

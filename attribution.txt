@@ -1,0 +1,13 @@
+=== Sound effects ===
+click.wav - Click_1.wav by JonnyRuss01 -- https://freesound.org/s/478197/ -- License: Creative Commons 0
+error_buzz.wav - UI_Cancel by unfa -- https://freesound.org/s/565133/ -- License: Creative Commons 0
+explosion.wav - 8-Bit Explosion 1_4 by Joao_Janz -- https://freesound.org/s/478271/ -- License: Creative Commons 0
+short_beep.wav - tone beep.wav by Mossy4 -- https://freesound.org/s/263133/ -- License: Attribution 4.0
+woosh.wav - swosh-22.flac by qubodup -- https://freesound.org/s/60009/ -- License: Creative Commons 0
+
+=== Godot Plugins ===
+"autosize_label" by jynus
+Some code adapted from "auto_class_name" by zwickarr
+
+=== Shaders ===
+diamond wipe - https://godotshaders.com/shader/diamond-based-screen-transition/

@@ -33,13 +33,14 @@ func _exit_tree() -> void:
 func _on_editor_script_changed(script:Script) -> void:
 	if (script == null): 
 		return #When godot first opens, sometimes the editor_script_changed signal gets emitted with a null value
-		
+	
 	var script_filepath := script.resource_path
 	var script_filename := script_filepath.get_file()
-	
+
 	if (_is_new_script(script)):
 		known_gdscript_files.add(script_filename)
 		create_tween().tween_callback(_on_opened_new_script.bind(script, script_filename)).set_delay(0.1)
+
 
 
 #New scripts sometimes come with functions defined (e.g. _ready())

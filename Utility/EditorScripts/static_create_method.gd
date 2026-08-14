@@ -15,8 +15,7 @@ func _run() -> void:
 		print("[StaticCreateMethod] Warning: active script already has a static create() func")
 		return
 	
-	var static_create_func = _make_static_create_func(current_script)
-	var modified_source_code = _make_modified_source_code(current_script, static_create_func)
+	var modified_source_code = _make_modified_source_code(current_script)
 	FileUtilities.modify_active_script_source_code(current_script, modified_source_code)
 
 
@@ -29,13 +28,13 @@ func _make_static_create_func(current_script:Script) -> String:
 	return static_create_func
 
 
-func _make_modified_source_code(current_script:Script, static_create_func:String) -> String:
+func _make_modified_source_code(current_script:Script) -> String:
 	var new_source_code = current_script.source_code
 	
 	var first_function_index = current_script.source_code.find("func ")
 	if (first_function_index == -1):
 		print("Couldn't find a function match")
-		new_source_code += "\n\n" + static_create_func
+		new_source_code += "\n\n" + _make_static_create_func(current_script)
 	else:
 		var insertion_index = first_function_index
 		
@@ -44,7 +43,7 @@ func _make_modified_source_code(current_script:Script, static_create_func:String
 			insertion_index = previous_double_linebreak_index + 2			
 
 		new_source_code = current_script.source_code.substr(0, insertion_index) \
-						  + static_create_func + "\n\n" \
+						  + _make_static_create_func(current_script) + "\n\n" \
 						  + current_script.source_code.substr(insertion_index)
 	
 	return new_source_code

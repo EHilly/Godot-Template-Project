@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bm4eti4c7pyko"]
+
+[ext_resource type="Shader" uid="uid://dp05uh1lyaxr" path="res://Autoloads/Transitions/diamond_grid.gdshader" id="1_c1x34"]
+[ext_resource type="Script" uid="uid://ygh688ftt1q5" path="res://Autoloads/Transitions/transitions.gd" id="1_n68ev"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n68ev"]
+shader = ExtResource("1_c1x34")
+shader_parameter/start_color = Vector4(1, 0, 0, 0)
+shader_parameter/end_color = Vector4(0, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 70.0
+
+[node name="Transitions" type="CanvasLayer" unique_id=1647201371 node_paths=PackedStringArray("screen_cover")]
+script = ExtResource("1_n68ev")
+screen_cover = NodePath("ScreenCover")
+
+[node name="ScreenCover" type="ColorRect" parent="." unique_id=1014632597]
+z_index = 100
+texture_filter = 1
+material = SubResource("ShaderMaterial_n68ev")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

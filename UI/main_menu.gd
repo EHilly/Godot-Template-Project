@@ -8,6 +8,10 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	print("I have these children:")
+	for child in get_children():
+		print(child.name)
+		
 	play_button.pressed.connect(_on_play_button_was_pressed)
 	options_button.pressed.connect(_on_options_button_was_pressed)
 	credits_button.pressed.connect(_on_credits_button_was_pressed)

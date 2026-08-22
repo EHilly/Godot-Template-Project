@@ -1,8 +1,7 @@
-class_name SfxTest
+class_name EmptyTestScene
 extends Node2D
 
 @export var error_sound_effect:AudioStream
-var error_sound_effect2:AudioStream
 @export var short_beep_sound_effect:AudioStream
 @export var click_sound_effect:AudioStream
 

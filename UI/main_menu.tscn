@@ -3,15 +3,14 @@
 [ext_resource type="Script" uid="uid://6b5ltwdwu64w" path="res://UI/main_menu.gd" id="1_d8nwk"]
 [ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/Sprites/white_square.png" id="1_p8ccj"]
 [ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="2_tk8dj"]
-[ext_resource type="PackedScene" uid="uid://bhgdiqhkva4rt" path="res://UI/credit_screen.tscn" id="4_4cwpn"]
+[ext_resource type="PackedScene" uid="uid://bhgdiqhkva4rt" path="res://UI/credits_submenu.tscn" id="4_4cwpn"]
 
-[node name="MainMenu" type="CanvasLayer" unique_id=1672638096 node_paths=PackedStringArray("play_button", "options_button", "credits_button", "quit_button", "credit_screen")]
+[node name="MainMenu" type="CanvasLayer" unique_id=1672638096 node_paths=PackedStringArray("play_button", "options_button", "credits_button", "quit_button")]
 script = ExtResource("1_d8nwk")
 play_button = NodePath("ButtonsAndTitleVBox/PlayButton")
 options_button = NodePath("ButtonsAndTitleVBox/OptionsButton")
 credits_button = NodePath("ButtonsAndTitleVBox/CreditsButton")
 quit_button = NodePath("ButtonsAndTitleVBox/QuitButton")
-credit_screen = NodePath("CreditScreen")
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=101043291]
 anchors_preset = 15
@@ -82,5 +81,5 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 34
 text = "QUIT"
 
-[node name="CreditScreen" parent="." unique_id=1782850706 instance=ExtResource("4_4cwpn")]
+[node name="CreditsSubmenu" parent="." unique_id=1782850706 instance=ExtResource("4_4cwpn")]
 visible = false

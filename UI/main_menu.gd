@@ -6,7 +6,7 @@ extends CanvasLayer
 @export var credits_button:Button
 @export var quit_button:Button
 
-@export var credit_screen:Submenu
+@export var credits_submenu:Submenu
 
 
 func _ready() -> void:
@@ -15,7 +15,7 @@ func _ready() -> void:
 	credits_button.pressed.connect(_on_credits_button_was_pressed)
 	quit_button.pressed.connect(_on_quit_button_was_pressed)
 	
-	credit_screen.visibility_changed.connect(_on_credit_screen_visibility_changed)
+	credits_submenu.visibility_changed.connect(_on_credits_submenu_visibility_changed)
 	
 	play_button.grab_focus.call_deferred()
 
@@ -27,13 +27,13 @@ func _on_options_button_was_pressed():
 	pass
 
 func _on_credits_button_was_pressed():
-	credit_screen.visible = true
+	credits_submenu.visible = true
 	visible = false	
 	
 func _on_quit_button_was_pressed():
 	get_tree().quit()
 
-func _on_credit_screen_visibility_changed():
-	if (!credit_screen.visible):
+func _on_credits_submenu_visibility_changed():
+	if (!credits_submenu.visible):
 		visible = true
 		credits_button.grab_focus()

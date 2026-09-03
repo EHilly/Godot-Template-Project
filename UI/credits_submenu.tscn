@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/Sprites/white_square.png" id="2_m4aus"]
 [ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="3_5gac8"]
 
-[node name="CreditScreen" type="CanvasLayer" unique_id=1672638096]
+[node name="CreditsSubmenu" type="CanvasLayer" unique_id=1672638096]
 script = ExtResource("1_fxswb")
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=101043291]

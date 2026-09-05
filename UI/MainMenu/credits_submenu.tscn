@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bhgdiqhkva4rt"]
 
-[ext_resource type="Script" uid="uid://bxutttvgrbrgu" path="res://UI/submenu.gd" id="1_fxswb"]
-[ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/Sprites/white_square.png" id="2_m4aus"]
-[ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="3_5gac8"]
+[ext_resource type="Script" uid="uid://bxutttvgrbrgu" path="res://UI/MainMenu/submenu.gd" id="1_a7eqm"]
+[ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/Sprites/white_square.png" id="2_6v0vv"]
+[ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="3_l3rm0"]
 
 [node name="CreditsSubmenu" type="CanvasLayer" unique_id=1672638096]
-script = ExtResource("1_fxswb")
+script = ExtResource("1_a7eqm")
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=101043291]
 anchors_preset = 15
@@ -13,7 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_m4aus")
+texture = ExtResource("2_6v0vv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BackgroundImage" unique_id=1674418442]
 custom_minimum_size = Vector2(600, 400)
@@ -32,7 +32,7 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="BackgroundImage/VBoxContainer" unique_id=852439238]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("3_5gac8")
+theme = ExtResource("3_l3rm0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 128
 text = "CREDITS"
@@ -49,13 +49,17 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Title2" type="Label" parent="BackgroundImage/VBoxContainer/PanelContainer/MarginContainer" unique_id=1560561600]
+[node name="CreditsText" type="Label" parent="BackgroundImage/VBoxContainer/PanelContainer/MarginContainer" unique_id=1560561600]
 custom_maximum_size = Vector2(-1, 800)
 layout_mode = 2
-theme = ExtResource("3_5gac8")
+theme = ExtResource("3_l3rm0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 22
-text = "=== Sound effects ===
+text = "=== Music ===
+Loop_Fighting_Evil_Mummies_04.wav by LittleRobotSoundFactory -- https://freesound.org/s/320965/ -- License: Attribution 4.0
+Loop_NeverLettingGo_00.wav by LittleRobotSoundFactory -- https://freesound.org/s/323916/ -- License: Attribution 4.0
+
+=== Sound effects ===
 click.wav - Click_1.wav by JonnyRuss01 -- https://freesound.org/s/478197/ -- License: Creative Commons 0
 error_buzz.wav - UI_Cancel by unfa -- https://freesound.org/s/565133/ -- License: Creative Commons 0
 explosion.wav - 8-Bit Explosion 1_4 by Joao_Janz -- https://freesound.org/s/478271/ -- License: Creative Commons 0

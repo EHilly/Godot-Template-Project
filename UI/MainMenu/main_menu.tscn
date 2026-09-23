@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://dvobonlj2bvbe"]
 
-[ext_resource type="Script" uid="uid://6b5ltwdwu64w" path="res://UI/main_menu.gd" id="1_d8nwk"]
-[ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/Sprites/white_square.png" id="1_p8ccj"]
-[ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="2_tk8dj"]
-[ext_resource type="PackedScene" uid="uid://bhgdiqhkva4rt" path="res://UI/credits_submenu.tscn" id="4_4cwpn"]
-[ext_resource type="Script" uid="uid://bxutttvgrbrgu" path="res://UI/submenu.gd" id="5_f40uw"]
+[ext_resource type="Script" uid="uid://6b5ltwdwu64w" path="res://UI/MainMenu/main_menu.gd" id="1_h8rmy"]
+[ext_resource type="Texture2D" uid="uid://chp5778a8vayt" path="res://General/Sprites/white_square.png" id="2_iyy2y"]
+[ext_resource type="AudioStream" uid="uid://dw75bhqaj3dqx" path="res://UI/MainMenu/Loop_NeverLettingGo_00.wav" id="2_trkrl"]
+[ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="3_trkrl"]
+[ext_resource type="PackedScene" uid="uid://bhgdiqhkva4rt" path="res://UI/MainMenu/credits_submenu.tscn" id="4_bddxb"]
+[ext_resource type="Script" uid="uid://bxutttvgrbrgu" path="res://UI/MainMenu/submenu.gd" id="6_trkrl"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1672638096 node_paths=PackedStringArray("play_button", "options_button", "credits_button", "quit_button", "credits_submenu")]
-script = ExtResource("1_d8nwk")
+script = ExtResource("1_h8rmy")
 play_button = NodePath("ButtonsAndTitleVBox/PlayButton")
 options_button = NodePath("ButtonsAndTitleVBox/OptionsButton")
 credits_button = NodePath("ButtonsAndTitleVBox/CreditsButton")
 quit_button = NodePath("ButtonsAndTitleVBox/QuitButton")
 credits_submenu = NodePath("CreditsSubmenu")
+main_menu_music_stream = ExtResource("2_trkrl")
 
 [node name="BackgroundImage" type="TextureRect" parent="." unique_id=101043291]
 anchors_preset = 15
@@ -20,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_p8ccj")
+texture = ExtResource("2_iyy2y")
 
 [node name="ButtonsAndTitleVBox" type="VBoxContainer" parent="." unique_id=1674418442]
 custom_minimum_size = Vector2(600, 400)
@@ -42,7 +44,7 @@ theme_override_constants/separation = 10
 [node name="Title" type="Label" parent="ButtonsAndTitleVBox" unique_id=852439238]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("2_tk8dj")
+theme = ExtResource("3_trkrl")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 128
 text = "GAME TITLE"
@@ -83,6 +85,6 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 34
 text = "QUIT"
 
-[node name="CreditsSubmenu" type="CanvasLayer" parent="." unique_id=1782850706 instance=ExtResource("4_4cwpn")]
+[node name="CreditsSubmenu" type="CanvasLayer" parent="." unique_id=1782850706 instance=ExtResource("4_bddxb")]
 visible = false
-script = ExtResource("5_f40uw")
+script = ExtResource("6_trkrl")

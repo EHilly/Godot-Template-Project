@@ -1,3 +1,7 @@
+=== Music ===
+Loop_Fighting_Evil_Mummies_04.wav by LittleRobotSoundFactory -- https://freesound.org/s/320965/ -- License: Attribution 4.0
+Loop_NeverLettingGo_00.wav by LittleRobotSoundFactory -- https://freesound.org/s/323916/ -- License: Attribution 4.0
+
 === Sound effects ===
 click.wav - Click_1.wav by JonnyRuss01 -- https://freesound.org/s/478197/ -- License: Creative Commons 0
 error_buzz.wav - UI_Cancel by unfa -- https://freesound.org/s/565133/ -- License: Creative Commons 0

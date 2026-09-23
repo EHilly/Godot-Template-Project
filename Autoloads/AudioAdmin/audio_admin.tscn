@@ -4,9 +4,10 @@
 [ext_resource type="Script" uid="uid://din2illnrstwe" path="res://Autoloads/AudioAdmin/sfx_player_manager.gd" id="2_v3h5d"]
 [ext_resource type="Script" uid="uid://b650mi6xx5soq" path="res://Autoloads/AudioAdmin/music_player_manager.gd" id="3_fylf4"]
 
-[node name="AudioAdmin" type="Node" unique_id=1703948717 node_paths=PackedStringArray("sfx_player_manager")]
+[node name="AudioAdmin" type="Node" unique_id=1703948717 node_paths=PackedStringArray("sfx_player_manager", "music_player_manager")]
 script = ExtResource("1_bp10v")
 sfx_player_manager = NodePath("SfxPlayerManager")
+music_player_manager = NodePath("MusicPlayerManager")
 
 [node name="SfxPlayerManager" type="Node" parent="." unique_id=1289014431]
 script = ExtResource("2_v3h5d")

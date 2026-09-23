@@ -14,6 +14,10 @@ config/name="TemplateProject"
 run/main_scene="uid://dvobonlj2bvbe"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://Autoloads/AudioAdmin/default_bus_layout.tres"
+
 [autoload]
 
 AudioAdmin="*uid://bnj6ffacgsp30"

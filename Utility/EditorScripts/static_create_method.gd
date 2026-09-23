@@ -2,6 +2,24 @@
 class_name StaticCreateMethod
 extends EditorScript
 
+'''
+This is a pattern that I like to use for small projects.
+Suppose we have a scene with this uid: "uid://du6nmhclrgepo"
+And suppose this scene's class is Bullet
+It'd be nice if Bullet had a static factory method that instantiates the bullet scene, like this:
+	class_name Bullet
+	...
+	const _SELF_SCENE = preload("uid://du6nmhclrgepo")
+	static func create() -> Bullet:
+		var bullet:Bullet = _SELF_SCENE.instantiate()
+		return bullet
+
+This editor script creates that for you.
+
+Note that because we're using class_name and preload(), we incur the loading cost every time the game starts. 
+For a larger project, we might want to use a system that loads resources in the background instead.
+'''
+
 func _run() -> void:
 	var current_script:Script = EditorInterface.get_script_editor().get_current_script()
 	
@@ -21,10 +39,14 @@ func _run() -> void:
 
 func _make_static_create_func(current_script:Script) -> String:
 	var tscn_resource_path:String = current_script.resource_path.replace(".gd", ".tscn")
+	var tscn_resource_uid:String = ResourceUID.path_to_uid(tscn_resource_path)
 	var snake_case_class_name:String = current_script.resource_path.get_file().split(".")[0]
-	var static_create_func = "static func create() -> %s:\n" % current_script.get_global_name()
-	static_create_func += "\tvar %s:%s = load('%s').instantiate()\n" % [snake_case_class_name, current_script.get_global_name(), tscn_resource_path]
+
+	var static_create_func = "const _SELF_SCENE = preload('%s')\n\n" % tscn_resource_uid
+	static_create_func += "static func create() -> %s:\n" % current_script.get_global_name()
+	static_create_func += "\tvar %s:%s = _SELF_SCENE.instantiate()\n" % [snake_case_class_name, current_script.get_global_name()]
 	static_create_func += "\treturn %s" % snake_case_class_name
+	
 	return static_create_func
 
 

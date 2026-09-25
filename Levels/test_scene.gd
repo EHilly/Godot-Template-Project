@@ -1,4 +1,4 @@
-class_name EmptyTestScene
+class_name TestScene
 extends Node2D
 
 @export var error_sound_effect:AudioStream

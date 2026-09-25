@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://dw75bhqaj3dqx" path="res://UI/MainMenu/Loop_NeverLettingGo_00.wav" id="2_trkrl"]
 [ext_resource type="Theme" uid="uid://ba624b86ssus5" path="res://UI/master_theme.tres" id="3_trkrl"]
 [ext_resource type="PackedScene" uid="uid://bhgdiqhkva4rt" path="res://UI/MainMenu/credits_submenu.tscn" id="4_bddxb"]
-[ext_resource type="Script" uid="uid://bxutttvgrbrgu" path="res://UI/MainMenu/submenu.gd" id="6_trkrl"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1672638096 node_paths=PackedStringArray("play_button", "options_button", "credits_button", "quit_button", "credits_submenu")]
 script = ExtResource("1_h8rmy")
@@ -85,6 +84,5 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 34
 text = "QUIT"
 
-[node name="CreditsSubmenu" type="CanvasLayer" parent="." unique_id=1782850706 instance=ExtResource("4_bddxb")]
+[node name="CreditsSubmenu" parent="." unique_id=1782850706 instance=ExtResource("4_bddxb")]
 visible = false
-script = ExtResource("6_trkrl")

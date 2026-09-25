@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://du6nmhclrgepo"]
+
+[ext_resource type="Script" uid="uid://cw6mjmccaqms1" path="res://Levels/test_scene.gd" id="1_d6kn1"]
+[ext_resource type="AudioStream" uid="uid://de12nvnyte75v" path="res://General/SoundEffects/error_buzz.wav" id="2_u6qdh"]
+[ext_resource type="AudioStream" uid="uid://ce2vcfwkb6xyr" path="res://General/SoundEffects/short_beep.wav" id="3_qps05"]
+[ext_resource type="AudioStream" uid="uid://b58omhlwxlw0c" path="res://General/SoundEffects/click.wav" id="4_dfwtf"]
+[ext_resource type="AudioStream" uid="uid://cdhk6llypaqfc" path="res://General/Music/Loop_Fighting_Evil_Mummies_04.wav" id="5_va1gj"]
+
+[node name="TestScene" type="Node2D" unique_id=246965807]
+script = ExtResource("1_d6kn1")
+error_sound_effect = ExtResource("2_u6qdh")
+short_beep_sound_effect = ExtResource("3_qps05")
+click_sound_effect = ExtResource("4_dfwtf")
+music_stream = ExtResource("5_va1gj")

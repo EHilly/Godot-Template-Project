@@ -10,9 +10,6 @@ const INAUDIBLE_VOLUME_DB:float = -80
 var current_track_fade_out_tween:Tween
 var new_track_fade_in_tween:Tween
 
-#https://freesound.org/people/LittleRobotSoundFactory/sounds/320965/
-#https://freesound.org/people/LittleRobotSoundFactory/sounds/323916/
-
 func play_music(music_stream:AudioStream, crossfade_duration:float = 0.5):
 	#Fade out the current track
 	current_track_fade_out_tween = TweenUtilities.kill_and_recreate_tween(self, current_track_fade_out_tween)

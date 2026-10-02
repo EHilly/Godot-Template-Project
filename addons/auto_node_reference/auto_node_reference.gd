@@ -1,6 +1,13 @@
 @tool
 extends EditorPlugin
 
+'''
+I use the @export notation for node references all the time
+But I often forget to set those references in the inspector, which causes runtime errors
+
+This plugin attempts to populate all of the null @export node references on all tscns in the project
+It runs just before the game launches
+'''
 
 func _build() -> bool:
 	_populate_null_exported_node_references_for_all_tscns_in_project()

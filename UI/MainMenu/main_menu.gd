@@ -10,6 +10,8 @@ extends CanvasLayer
 
 @export var main_menu_music_stream:AudioStream
 
+var scene_to_load_when_play_button_is_pressed:PackedScene = preload("uid://du6nmhclrgepo") #res://Levels/test_scene.tscn
+
 func _ready() -> void:
 	play_button.pressed.connect(_on_play_button_was_pressed)
 	options_button.pressed.connect(_on_options_button_was_pressed)
@@ -24,10 +26,10 @@ func _ready() -> void:
 
 
 func _on_play_button_was_pressed():
-	var transition_animation_tween = Transitions.animate_diamond_wipe_and_return_animation_tween(Color.TRANSPARENT, Color.BLACK, 0.5)
-	await transition_animation_tween.finished
-	Transitions.animate_diamond_wipe_and_return_animation_tween(Color.BLACK, Color.TRANSPARENT, 0.5)
-	get_tree().change_scene_to_file("res://Levels/empty_test_scene.tscn")
+	Transitions.animate_diamond_wipe(Color.TRANSPARENT, Color.BLACK, 0.5)
+	await Transitions.animation_finished
+	Transitions.animate_diamond_wipe(Color.BLACK, Color.TRANSPARENT, 0.5)
+	get_tree().change_scene_to_packed(scene_to_load_when_play_button_is_pressed)
 	
 
 func _on_options_button_was_pressed():

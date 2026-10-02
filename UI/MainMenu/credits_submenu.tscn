@@ -66,9 +66,10 @@ explosion.wav - 8-Bit Explosion 1_4 by Joao_Janz -- https://freesound.org/s/4782
 short_beep.wav - tone beep.wav by Mossy4 -- https://freesound.org/s/263133/ -- License: Attribution 4.0
 woosh.wav - swosh-22.flac by qubodup -- https://freesound.org/s/60009/ -- License: Creative Commons 0
 
-=== Godot Plugins ===
+=== Plugins and scripts ===
 \"autosize_label\" by jynus
 Some code adapted from \"auto_class_name\" by zwickarr
+Set implementation by NoodleSushi
 
 === Shaders ===
 diamond wipe - https://godotshaders.com/shader/diamond-based-screen-transition/"

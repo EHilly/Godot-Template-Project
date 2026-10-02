@@ -1,6 +1,6 @@
 ### Overview
 
-I made this template project as a starting point for game jams, and as a place to store things that I might use in future projects
+I made this template project as a starting point for game jams, and as a place to store things that I might use in future projects.
 
 Features:
 * Main menu
